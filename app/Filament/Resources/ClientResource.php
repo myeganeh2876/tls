@@ -19,7 +19,8 @@ class ClientResource extends Resource
 
     protected static ?string $navigationIcon = 'iconoir-user';
 
-    protected static ?string $navigationLabel = 'کاربران';
+    protected static ?string $modelLabel = 'کاربر';
+    protected static ?string $pluralModelLabel = 'کاربران';
     public static function form(Form $form): Form
     {
         return $form

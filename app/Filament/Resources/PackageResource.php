@@ -18,7 +18,13 @@ class PackageResource extends Resource
     protected static ?string $model = Package::class;
 
     protected static ?string $navigationIcon = 'iconoir-box-iso';
-    protected static ?string $navigationLabel = 'پکیج ها';
+    protected static ?string $navigationGroup = 'اطلاعات';
+
+    protected static ?string $modelLabel = 'پکیج';
+    protected static ?string $pluralModelLabel = 'پکیج ها';
+
+
+
     public static function form(Form $form): Form
     {
         return $form

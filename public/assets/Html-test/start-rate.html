@@ -1,0 +1,92 @@
+<html lang="en" class="wf-fontawesome-n4-active wf-active"><head>
+    <meta charset="UTF-8">
+    
+  
+      <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+  
+      <meta name="apple-mobile-web-app-title" content="CodePen">
+  
+      <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+  
+      <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+  
+  
+  
+    
+    
+  
+    <title>CodePen - Input Star Rating</title>
+  
+      <link rel="canonical" href="https://codepen.io/jrsdiniz/pen/OJVdXjx">
+    
+    
+    
+    
+  <style>
+  .rating {
+    margin-top: 40px;
+    border: none;
+    float: left;
+  }
+  
+  .rating > label {
+    color: #90A0A3;
+    float: right;
+  }
+  
+  .rating > label:before {
+    margin: 5px;
+    font-size: 2em;
+    font-family: FontAwesome;
+    content: "\f005";
+    display: inline-block;
+  }
+  
+  .rating > input {
+    display: none;
+  }
+  
+  .rating > input:checked ~ label,
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+    color: #F79426;
+  }
+  
+  .rating > input:checked + label:hover,
+  .rating > input:checked ~ label:hover,
+  .rating > label:hover ~ input:checked ~ label,
+  .rating > input:checked ~ label:hover ~ label {
+    color: #FECE31;
+  }
+  </style>
+  
+    <script src="https://use.fontawesome.com/webfontloader/1.6.24/webfontloader.js"></script><script>
+    window.console = window.console || function(t) {};
+  </script><link rel="stylesheet" href="https://use.fontawesome.com/7ad89d9866.css" media="all">
+  
+    
+    
+  </head>
+  
+  <body translate="no">
+    <!-- Inspired by: https://codepen.io/jamesbarnett/pen/vlpkh -->
+  
+  <div class="rating">
+    <input type="radio" id="star5" name="rating" value="5">
+    <label class="star" for="star5" title="Awesome" aria-hidden="true"></label>
+    <input type="radio" id="star4" name="rating" value="4">
+    <label class="star" for="star4" title="Great" aria-hidden="true"></label>
+    <input type="radio" id="star3" name="rating" value="3">
+    <label class="star" for="star3" title="Very good" aria-hidden="true"></label>
+    <input type="radio" id="star2" name="rating" value="2">
+    <label class="star" for="star2" title="Good" aria-hidden="true"></label>
+    <input type="radio" id="star1" name="rating" value="1">
+    <label class="star" for="star1" title="Bad" aria-hidden="true"></label>
+  </div>
+    <script src="https://use.fontawesome.com/7ad89d9866.js"></script>
+    
+    
+  
+  
+  
+  </body></html>

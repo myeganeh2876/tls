@@ -1,0 +1,17 @@
+@import url(../fonts/Vazirmatn/Vazirmatn-FD-font-face.css);
+@import url(../fonts/font-icon/font-icon.css);
+@import "./layout/header";
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+@supports (font-variation-settings: normal) {
+	body {
+		font-family: "Vazirmatn FD", "icomoon", sans-serif;
+	}
+}
+main {
+}
+@import "./pages/index";

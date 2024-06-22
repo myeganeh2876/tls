@@ -18,7 +18,11 @@ class TransactionResource extends Resource
     protected static ?string $model = Transaction::class;
 
     protected static ?string $navigationIcon = 'iconoir-wallet';
-    protected static ?string $navigationLabel = 'تراکنش ها';
+
+    protected static ?string $modelLabel = 'تراکنش';
+    protected static ?string $pluralModelLabel = 'تراکنش ها';
+
+
     public static function form(Form $form): Form
     {
         return $form

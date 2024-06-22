@@ -36,13 +36,15 @@ class AdminPanelProvider extends PanelProvider
             ->path('kcp')
             ->login()
             ->brandName('جیم پل')
+            ->brandLogo(asset('images/logo.svg'))
+            ->favicon(asset('images/favicon.ico'))
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::hex('#FE8C36'),
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
-                Pages\Dashboard::class,
+//                Pages\Dashboard::class,
                 GympallActivities::class
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')

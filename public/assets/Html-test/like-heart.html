@@ -1,0 +1,327 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+
+    <link rel="apple-touch-icon" type="image/png"
+        href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon"
+        href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon"
+        href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg"
+        color="#111">
+
+
+
+
+
+
+    <title>CodePen - Heart animation like</title>
+
+    <link rel="canonical" href="https://codepen.io/kant707/pen/eYOGKPb">
+
+
+
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            font-family: sans-serif;
+        }
+
+        #main-content {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            background: white;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+
+        svg {
+            cursor: pointer;
+            overflow: visible;
+            width: 60px;
+            border-bottom-left-radius: 9999px;
+            border-bottom-right-radius: 9999px;
+            border-top-left-radius: 9999px;
+            border-top-right-radius: 9999px;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        svg #heart {
+            transform-origin: center;
+            animation: animateHeartOut 0.3s linear forwards;
+        }
+
+        svg #main-circ {
+            transform-origin: 29.5px 29.5px;
+            border-bottom-left-radius: 9999px;
+            border-bottom-right-radius: 9999px;
+            border-top-left-radius: 9999px;
+            border-top-right-radius: 9999px;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        #checkbox {
+            display: none;
+        }
+
+        #checkbox:checked+label svg #heart {
+            transform: scale(0.2);
+            fill: #fc2779;
+            animation: animateHeart 0.3s linear forwards 0.25s;
+        }
+
+        #checkbox:checked+label svg #main-circ {
+            transition: all 2s;
+            animation: animateCircle 0.3s linear forwards;
+            opacity: 1;
+        }
+
+        #checkbox:checked+label svg .grp {
+            opacity: 1;
+            transition: 0.1s all 0.3s;
+        }
+
+        #checkbox:checked+label svg .grp .cir-a,
+        #checkbox:checked+label svg .grp .cir-b {
+            transform-origin: 0 0 0;
+        }
+
+        #checkbox:checked+label svg .grp .cir-a {
+            transition: 0.5s transform 0.3s;
+        }
+
+        #checkbox:checked+label svg .grp .cir-b {
+            transition: 1.5s transform 0.3s;
+        }
+
+        #checkbox:checked+label svg #grp1 #oval1 {
+            transform: scale(0) translate(0, -30px);
+        }
+
+        #checkbox:checked+label svg #grp1 #oval2 {
+            transform: scale(0) translate(10px, -50px);
+        }
+
+        #checkbox:checked+label svg #grp2 #oval1 {
+            transform: scale(0) translate(30px, -15px);
+        }
+
+        #checkbox:checked+label svg #grp2 #oval2 {
+            transform: scale(0) translate(60px, -15px);
+        }
+
+        #checkbox:checked+label svg #grp3 #oval1 {
+            transform: scale(0) translate(30px, 0px);
+        }
+
+        #checkbox:checked+label svg #grp3 #oval2 {
+            transform: scale(0) translate(60px, 10px);
+        }
+
+        #checkbox:checked+label svg #grp4 #oval1 {
+            transform: scale(0) translate(30px, 15px);
+        }
+
+        #checkbox:checked+label svg #grp4 #oval2 {
+            transform: scale(0) translate(40px, 50px);
+        }
+
+        #checkbox:checked+label svg #grp5 #oval1 {
+            transform: scale(0) translate(-10px, 20px);
+        }
+
+        #checkbox:checked+label svg #grp5 #oval2 {
+            transform: scale(0) translate(-60px, 30px);
+        }
+
+        #checkbox:checked+label svg #grp6 #oval1 {
+            transform: scale(0) translate(-30px, 0px);
+        }
+
+        #checkbox:checked+label svg #grp6 #oval2 {
+            transform: scale(0) translate(-60px, -5px);
+        }
+
+        #checkbox:checked+label svg #grp7 #oval1 {
+            transform: scale(0) translate(-30px, -15px);
+        }
+
+        #checkbox:checked+label svg #grp7 #oval2 {
+            transform: scale(0) translate(-55px, -30px);
+        }
+
+
+
+
+        @keyframes animateCircle {
+            40% {
+                transform: scale(10);
+                opacity: 1;
+                fill: #dd4688;
+            }
+
+            55% {
+                transform: scale(11);
+                opacity: 1;
+                fill: #d46abf;
+            }
+
+            65% {
+                transform: scale(12);
+                opacity: 1;
+                fill: #cc8ef5;
+            }
+
+            75% {
+                transform: scale(13);
+                opacity: 1;
+                fill: transparent;
+                stroke: #cc8ef5;
+                stroke-width: 0.5;
+            }
+
+            85% {
+                transform: scale(17);
+                opacity: 1;
+                fill: transparent;
+                stroke: #cc8ef5;
+                stroke-width: 0.2;
+            }
+
+            95% {
+                transform: scale(18);
+                opacity: 1;
+                fill: transparent;
+                stroke: #cc8ef5;
+                stroke-width: 0.1;
+            }
+
+            100% {
+                transform: scale(19);
+                opacity: 1;
+                fill: transparent;
+                stroke: #cc8ef5;
+                stroke-width: 0;
+            }
+        }
+
+        @keyframes animateHeart {
+            0% {
+                transform: scale(0.2);
+            }
+
+            40% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes animateHeartOut {
+            0% {
+                transform: scale(1.4);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+
+    <script>
+        window.console = window.console || function (t) { };
+    </script>
+
+
+
+</head>
+
+<body translate="no">
+
+
+
+    <meta charset="UTF-8">
+    <title>Heart animation for wishlist | Nykaa</title>
+
+
+    <div id="main-content">
+        <div>
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox">
+                <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">
+                        <path
+                            d="M28.9955034,43.5021565 C29.8865435,42.7463028 34.7699838,39.4111958 36.0304386,38.4371087 C41.2235681,34.4238265 43.9999258,30.3756814 44.000204,25.32827 C43.8745444,20.7084503 40.2276972,17 35.8181279,17 C33.3361339,17 31.0635318,18.1584833 29.5323721,20.1689268 L28.9999629,20.8679909 L28.4675537,20.1689268 C26.936394,18.1584833 24.6637919,17 22.181798,17 C17.6391714,17 14,20.7006448 14,25.3078158 C14,30.4281078 16.7994653,34.5060727 22.0294634,38.5288772 C23.3319753,39.530742 27.9546492,42.6675894 28.9955034,43.5021565 Z"
+                            id="heart" stroke="#A1AEB6"></path>
+                        <circle id="main-circ" fill="#A1AEB6" opacity="0" cx="29.5" cy="29.5" r="1.5"></circle>
+
+                        <g class="grp" id="grp7" opacity="0" transform="translate(7 6)">
+                            <circle class="cir-a" id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2"></circle>
+                            <circle class="cir-b " id="oval2" fill="#8CE8C3" cx="5" cy="2" r="2"></circle>
+                        </g>
+
+                        <g class="grp" id="grp6" opacity="0" transform="translate(0 28)">
+                            <circle class="cir-a" id="oval1" fill="#CC8EF5" cx="2" cy="7" r="2"></circle>
+                            <circle class="cir-b" id="oval2" fill="#91D2FA" cx="3" cy="2" r="2"></circle>
+                        </g>
+
+                        <g class="grp" id="grp3" opacity="0" transform="translate(52 28)">
+                            <circle class="cir-b" id="oval2" fill="#9CD8C3" cx="2" cy="7" r="2"></circle>
+                            <circle class="cir-a" id="oval1" fill="#8CE8C3" cx="4" cy="2" r="2"></circle>
+                        </g>
+
+                        <g class="grp" id="grp2" opacity="0" transform="translate(44 6)">
+                            <circle class="cir-b" id="oval2" fill="#CC8EF5" cx="5" cy="6" r="2"></circle>
+                            <circle class="cir-a" id="oval1" fill="#CC8EF5" cx="2" cy="2" r="2"></circle>
+                        </g>
+
+                        <g class="grp" id="grp5" opacity="0" transform="translate(14 50)">
+                            <circle class="cir-a" id="oval1" fill="#91D2FA" cx="6" cy="5" r="2"></circle>
+                            <circle class="cir-b" id="oval2" fill="#91D2FA" cx="2" cy="2" r="2"></circle>
+                        </g>
+
+                        <g class="grp" id="grp4" opacity="0" transform="translate(35 50)">
+                            <circle class="cir-a" id="oval1" fill="#F48EA7" cx="6" cy="5" r="2"></circle>
+                            <circle class="cir-b" id="oval2" fill="#F48EA7" cx="2" cy="2" r="2"></circle>
+                        </g>
+
+                        <g class="grp" id="grp1" opacity="0" transform="translate(24)">
+                            <circle class="cir-a" id="oval1" fill="#9FC7FA" cx="2.5" cy="3" r="2"></circle>
+                            <circle class="cir-b" id="oval2" fill="#9FC7FA" cx="7.5" cy="2" r="2"></circle>
+                        </g>
+                    </g>
+                </svg>
+            </label>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

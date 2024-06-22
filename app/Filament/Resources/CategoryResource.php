@@ -10,7 +10,9 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CategoryResource extends Resource
@@ -18,7 +20,10 @@ class CategoryResource extends Resource
     protected static ?string $model = Category::class;
 
     protected static ?string $navigationIcon = 'iconoir-list';
-    protected static ?string $navigationLabel = 'دسته بندی ها';
+    protected static ?string $navigationGroup = 'اطلاعات';
+
+    protected static ?string $modelLabel = 'دسته بندی';
+    protected static ?string $pluralModelLabel = 'دسته بندی ها';
 
     public static function form(Form $form): Form
     {

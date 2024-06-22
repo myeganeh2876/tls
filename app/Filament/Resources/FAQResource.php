@@ -18,7 +18,12 @@ class FAQResource extends Resource
     protected static ?string $model = FAQ::class;
 
     protected static ?string $navigationIcon = 'iconoir-chat-bubble-question';
-    protected static ?string $navigationLabel = 'سوالات متداول';
+    protected static ?string $navigationGroup = 'اطلاعات';
+
+    protected static ?string $modelLabel = 'سوال متداول';
+    protected static ?string $pluralModelLabel = 'سوالات متداول';
+
+
     public static function form(Form $form): Form
     {
         return $form

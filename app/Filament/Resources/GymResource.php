@@ -18,7 +18,12 @@ class GymResource extends Resource
     protected static ?string $model = Gym::class;
 
     protected static ?string $navigationIcon = 'iconoir-gym';
-    protected static ?string $navigationLabel = 'باشگاه ها';
+
+    protected static ?string $modelLabel = 'باشگاه';
+    protected static ?string $pluralModelLabel = 'باشگاه ها';
+
+
+
     public static function form(Form $form): Form
     {
         return $form

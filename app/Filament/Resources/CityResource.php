@@ -15,7 +15,11 @@ class CityResource extends Resource
     protected static ?string $model = City::class;
 
     protected static ?string $navigationIcon = 'iconoir-map-pin';
-    protected static ?string $navigationLabel = 'شهر ها';
+    protected static ?string $navigationGroup = 'اطلاعات';
+
+    protected static ?string $modelLabel = 'شهر';
+    protected static ?string $pluralModelLabel = 'شهر ها';
+
 
     public static function form(Form $form): Form
     {
