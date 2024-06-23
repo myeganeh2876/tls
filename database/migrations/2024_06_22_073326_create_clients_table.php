@@ -23,8 +23,8 @@ return new class extends Migration
             $table->date('birthday')->nullable();
             $table->text('address')->nullable();
             $table->string('subscription_code')->nullable();
-            $table->dateTime('subscription_end_date')->default(0);
-            $table->integer('subscription_remaining_sessions')->default(0);
+            $table->dateTime('subscription_end_date')->nullable();
+            $table->integer('subscription_remaining_sessions')->nullable();
             $table->unsignedInteger('active_package')->nullable();
             $table->boolean('active')->default(false);
             $table->timestamps();

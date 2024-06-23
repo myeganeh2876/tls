@@ -27,9 +27,9 @@ return new class extends Migration
             $table->text('address')->nullable();
             $table->string('location')->nullable();
             $table->boolean('visible')->default(false);
-            $table->foreignIdFor(Package::class)->constrained()->noActionOnDelete()->noActionOnUpdate();
-            $table->foreignIdFor(City::class)->constrained()->noActionOnDelete()->noActionOnUpdate();
-            $table->foreignIdFor(District::class)->constrained()->noActionOnDelete()->noActionOnUpdate();
+            $table->foreignIdFor(Package::class);
+            $table->foreignIdFor(City::class);
+            $table->foreignIdFor(District::class);
 
             $table->timestamps();
         });
