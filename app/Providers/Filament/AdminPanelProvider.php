@@ -54,8 +54,9 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 FilamentGeneralSettingsPlugin::make()
-                    ->setTitle('Settings')
+                    ->setTitle('تنظیمات')
                     ->setNavigationLabel('تنظیمات')
+                    ->setNavigationGroup('سیستم')
                     ->setIcon('iconoir-settings'),
                 FilamentSimplePagesPlugin::make()
                     ->setIcon('iconoir-page-edit')

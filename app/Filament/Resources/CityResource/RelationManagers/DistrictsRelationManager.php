@@ -14,11 +14,19 @@ class DistrictsRelationManager extends RelationManager
 {
     protected static string $relationship = 'districts';
 
+    protected static ?string $label = 'محله ها';
+    protected static ?string $modelLabel = 'محله';
+
+    protected static ?string $title = 'محله ها';
+    protected static ?string $pluralModelLabel = 'محله ها';
+
+    protected static ?string $pluralLabel = 'محله ها';
     public function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
+                    ->label('عنوان')
                     ->required()
                     ->maxLength(100),
             ]);
@@ -29,7 +37,7 @@ class DistrictsRelationManager extends RelationManager
         return $table
             ->recordTitleAttribute('title')
             ->columns([
-                Tables\Columns\TextColumn::make('title'),
+                Tables\Columns\TextColumn::make('title')->label('عنوان')->searchable(),
             ])
             ->filters([
                 //

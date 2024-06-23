@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\FAQResource\Pages;
-use App\Filament\Resources\FAQResource\RelationManagers;
-use App\Models\FAQ;
+use App\Filament\Resources\FieldResource\Pages;
+use App\Filament\Resources\FieldResource\RelationManagers;
+use App\Models\Field;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,30 +13,23 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class FAQResource extends Resource
+class FieldResource extends Resource
 {
-    protected static ?string $model = FAQ::class;
+    protected static ?string $model = Field::class;
 
-    protected static ?string $navigationIcon = 'iconoir-chat-bubble-question';
-    protected static ?string $navigationGroup = 'اطلاعات';
+    protected static ?string $navigationIcon = 'iconoir-short-pants-pockets';
 
-    protected static ?string $modelLabel = 'سوال متداول';
-    protected static ?string $pluralModelLabel = 'سوالات متداول';
-
-    protected static ?int $navigationSort = 2;
+    protected static ?string $navigationGroup = 'باشگاه';
+    protected static ?string $modelLabel = 'رشته';
+    protected static ?string $pluralModelLabel = 'رشته ها';
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make("title")
-                    ->label('عنوان سوال')
-                    ->required()
-                    ->columnSpanFull()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make("content")
-                    ->label('پاسخ سوال')
-                    ->columnSpanFull()
+                    ->label('عنوان')
                     ->required()
             ]);
     }
@@ -46,9 +39,9 @@ class FAQResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make("title")
+                    ->label('عنوان')
                     ->searchable()
                     ->sortable()
-                    ->label('عنوان سوال')
             ])
             ->filters([
                 //
@@ -73,9 +66,9 @@ class FAQResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListFAQS::route('/'),
-            'create' => Pages\CreateFAQ::route('/create'),
-            'edit' => Pages\EditFAQ::route('/{record}/edit'),
+            'index' => Pages\ListFields::route('/'),
+            'create' => Pages\CreateField::route('/create'),
+            'edit' => Pages\EditField::route('/{record}/edit'),
         ];
     }
 }

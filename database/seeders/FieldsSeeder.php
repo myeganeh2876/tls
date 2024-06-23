@@ -13,7 +13,7 @@ class FieldsSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('features')->insert([
+        DB::table('fields')->insert([
             ['title' => 'بندسازی'],
             ['title' => 'پیلاتس'],
             ['title' => 'ایروبیک'],

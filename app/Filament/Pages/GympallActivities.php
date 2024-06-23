@@ -8,6 +8,8 @@ class GympallActivities extends ListActivities
 {
     protected static ?string $slug = "activities";
     protected static ?string $title = 'فعایت ها';
+    protected static ?string $navigationGroup = 'سیستم';
+    protected static ?int $navigationSort = 10;
     // protected bool $isCollapsible = true;
 
     // protected bool $isCollapsed = false;

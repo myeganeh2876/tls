@@ -2,39 +2,35 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CategoryResource\Pages;
-use App\Filament\Resources\CategoryResource\RelationManagers;
-use App\Models\Category;
+use App\Filament\Resources\FeatureResource\Pages;
+use App\Filament\Resources\FeatureResource\RelationManagers;
+use App\Models\Feature;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class CategoryResource extends Resource
+class FeatureResource extends Resource
 {
-    protected static ?string $model = Category::class;
+    protected static ?string $model = Feature::class;
 
-    protected static ?string $navigationIcon = 'iconoir-list';
-    protected static ?string $navigationGroup = 'اطلاعات';
+    protected static ?string $navigationIcon = 'iconoir-bathroom';
 
-    protected static ?string $modelLabel = 'دسته بندی';
-    protected static ?string $pluralModelLabel = 'دسته بندی ها';
-
-    protected static ?int $navigationSort = 2;
+    protected static ?string $navigationGroup = 'باشگاه';
+    protected static ?string $modelLabel = 'امکان';
+    protected static ?string $pluralModelLabel = 'امکانات';
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make("title")
-                    ->label('عنوان')
-                    ->required()
-                    ->maxLength(60)
+                ->label('عنوان')
+                ->required()
             ]);
     }
 
@@ -42,7 +38,10 @@ class CategoryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make("title")->label("عنوان")
+                Tables\Columns\TextColumn::make("title")
+                ->label('عنوان')
+                ->searchable()
+                ->sortable()
             ])
             ->filters([
                 //
@@ -67,9 +66,9 @@ class CategoryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCategories::route('/'),
-            'create' => Pages\CreateCategory::route('/create'),
-            'edit' => Pages\EditCategory::route('/{record}/edit'),
+            'index' => Pages\ListFeatures::route('/'),
+            'create' => Pages\CreateFeature::route('/create'),
+            'edit' => Pages\EditFeature::route('/{record}/edit'),
         ];
     }
 }

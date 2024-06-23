@@ -20,14 +20,15 @@ class CityResource extends Resource
     protected static ?string $modelLabel = 'شهر';
     protected static ?string $pluralModelLabel = 'شهر ها';
 
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make("title")
+                    ->label('عنوان')
                     ->required()
-                    ->columnSpan('full')
                     ->maxLength(60),
 
             ]);
@@ -37,7 +38,9 @@ class CityResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make("title")->searchable()->sortable()
+                Tables\Columns\TextColumn::make("title")
+                    ->label('عنوان')
+                    ->searchable()->sortable()
             ])
             ->filters([
                 //

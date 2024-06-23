@@ -6,6 +6,8 @@ return [
     'title' => 'فعالیت ها',
 
     'default_datetime_format' => 'Y-m-d, H:i:s',
+    'date_format' => 'Y-m-d',
+    'time_format' => 'H:i:s',
 
     'table' => [
         'field' => 'فیلد',
