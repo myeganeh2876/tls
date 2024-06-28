@@ -42,6 +42,7 @@
                 </a>
             </div>
         </div>
+        @if(1==2)
         <div class="boxSubscription">
             <div class="boxSubscription__right">
                 <figure class="boxSubscription__img">
@@ -61,6 +62,7 @@
                 </a>
             </div>
         </div>
+        @endif
     </div>
 </header>
 <div id="ResponsiveMenuMobile" class="ResponsiveMenuMobile">
