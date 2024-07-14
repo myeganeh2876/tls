@@ -38,7 +38,7 @@
                                         <figure class="services__box--img">
                                             <a href="{{route('services.single', $service)}}">
                                                     <div>
-                                                        {{ $service->getMedias('images')[0]->withImageProperties( width : 200,height: 200)->withView('components.json-media') }}
+                                                        <img src="{{ Storage::url($service->images[0]) }}"/>
                                                     </div>
                                             </a>
 
@@ -76,7 +76,7 @@
                                 <div class="swiper-slide">
                                     <div class="featuredProjectsBox">
                                         <figure class="featuredProjectsBox__img">
-                                            {{$project->getMedias('images')[0]}}
+                                            <img src="{{ Storage::url($project->images[0]) }}"/>
                                         </figure>
                                         <div class="featuredProjectsBox__content">
                                             <div class="featuredProjectsBox__title">

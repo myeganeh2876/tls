@@ -8,18 +8,12 @@ use GalleryJsonMedia\JsonMedia\Concerns\InteractWithMedia;
 use GalleryJsonMedia\JsonMedia\Contracts\HasMedia;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Service extends Model implements HasMedia
+class Service extends Model
 {
     use HasFactory;
-    use InteractWithMedia;
-
-    protected $casts =[
-        'images' => 'array'
+    protected $casts = [
+        'images' => 'array',
     ];
-
-    protected function getFieldsToDeleteMedia(): array {
-        return ['images'];
-    }
 
     public function projects(): BelongsToMany
     {

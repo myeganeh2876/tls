@@ -6,6 +6,7 @@ use App\Filament\Resources\ServiceResource\Pages;
 use App\Filament\Resources\ServiceResource\RelationManagers;
 use App\Models\Service;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -31,14 +32,12 @@ class ServiceResource extends Resource
                 Forms\Components\RichEditor::make('content')
                     ->columnSpanFull()
                     ->required(),
-                JsonMediaGallery::make('images')
+                FileUpload::make('images')
+                    ->disk('public')
+                    ->multiple()
                     ->directory('services')
-                    ->reorderable()
-                    ->maxFiles(10)
-                    ->minFiles(1)
-                    ->image() // only images by default , u need to choose one (images or document)
-                    ->downloadable()
-                    ->deletable(),
+                    ->visibility('public')
+                    ->acceptedFileTypes(['image/jpeg','image/jpg','image/png']),
                 Forms\Components\Select::make('projects')
                 ->relationship('projects', 'title')
                 ->multiple()

@@ -3,17 +3,15 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProjectResource\Pages;
-use App\Filament\Resources\ProjectResource\RelationManagers;
+
 use App\Models\Project;
 use Filament\Forms;
+use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use GalleryJsonMedia\Tables\Columns\JsonMediaColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use GalleryJsonMedia\Form\JsonMediaGallery;
+
 class ProjectResource extends Resource
 {
     protected static ?string $model = Project::class;
@@ -38,15 +36,12 @@ class ProjectResource extends Resource
                 Forms\Components\TextInput::make('location')
                     ->required()
                     ->maxLength(60),
-                JsonMediaGallery::make('images')
-                    ->directory('project')
-                    ->reorderable()
-                    ->preserveFilenames()
-                    ->maxFiles(10)
-                    ->minFiles(1)
-                    ->image() // only images by default , u need to choose one (images or document)
-                    ->downloadable()
-                    ->deletable()
+                FileUpload::make('images')
+                    ->disk('public')
+                    ->multiple()
+                    ->directory('projects')
+                    ->visibility('public')
+                    ->acceptedFileTypes(['image/jpeg','image/jpg','image/png']),
             ]);
     }
 
