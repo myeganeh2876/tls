@@ -11,7 +11,8 @@ class ProjectController extends Controller
 
     public function __invoke()
     {
-        return view('pages.projects');
+        $projects = Project::query()->get();
+        return view('pages.projects', compact('projects'));
     }
 
     public function single(Request $request, Project $project)

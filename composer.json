@@ -12,6 +12,7 @@
         "joaopaulolndev/filament-general-settings": "^1.0",
         "laravel/framework": "^11.9",
         "laravel/tinker": "^2.9",
+        "spatie/image": "^3.6",
         "tobiasla78/filament-simple-pages": "*",
         "tomatophp/filament-menus": "^1.0",
         "webplusm/gallery-json-media": "^2.2"

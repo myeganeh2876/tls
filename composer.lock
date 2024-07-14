@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f60e0b3bca1a6eb995eb8aabdd5abe3b",
+    "content-hash": "a439ce0ccfc7be1d9f392d7eb103fc8c",
     "packages": [
         {
             "name": "andreiio/blade-iconoir",
