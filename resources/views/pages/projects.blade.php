@@ -10,7 +10,8 @@
                         <div class="col-md-6">
                             <div class="featuredProjectsBox pageProject">
                                 <figure class="featuredProjectsBox__img">
-                                    {{$project->getMedias('images')[0]}}
+                                    <img src="{{ Storage::url($project->images[0]) }}"/>
+
                                 </figure>
                                 <div class="featuredProjectsBox__content">
                                     <div class="featuredProjectsBox__title">

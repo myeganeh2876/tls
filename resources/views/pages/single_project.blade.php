@@ -14,10 +14,10 @@
             <section class="single-page__slider">
                 <div class="swiper single-page__swiper">
                     <div class="swiper-wrapper">
-                        @foreach($project->getMedias('images') as $media)
+                        @foreach($project->images as $media)
                             <div class="swiper-slide">
                                 <figure class="single-page__img">
-                                    {{ $media }}
+                                   <img src="{{Storage::url($media)}}">
                                 </figure>
                             </div>
                         @endforeach

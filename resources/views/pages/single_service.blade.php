@@ -9,6 +9,26 @@
                     {!! $service->content !!}
                 </div>
 
+                <section class="single-page__slider">
+                    <div class="swiper single-page__swiper">
+                        <div class="swiper-wrapper">
+                            @foreach($service->images as $media)
+                                <div class="swiper-slide">
+                                    <figure class="single-page__img">
+                                        <img src="{{Storage::url($media)}}">
+                                    </figure>
+                                </div>
+                            @endforeach
+                        </div>
+
+                    </div>
+                    <div class="single-page__navigation">
+                        <div class="single-page-swiper-button-prev swiper-button-prev"><i class="icon-arrow__left"></i>
+                        </div>
+                        <div class="single-page-swiper-button-next swiper-button-next"><i class="icon-arrow__right"></i>
+                        </div>
+                    </div>
+                </section>
 
                 <div class="serviceName__wrFeature">
                     <div class="serviceName__feature--title">
@@ -22,7 +42,7 @@
                                 <div class="serviceName__featureBox">
                                     <figure class="serviceName__featureBox--img">
                                         <a href="{{route('projects.single', $project)}}">
-                                            {{$project->getMedias('images')[0]}}
+                                            <img src="{{ Storage::url($project->images[0]) }}"/>
                                         </a>
                                     </figure>
                                     <div class="serviceName__featureBox--content">

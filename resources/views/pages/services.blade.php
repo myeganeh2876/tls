@@ -28,7 +28,7 @@
                                     <div class="services__box">
                                         <figure class="services__box--img">
                                             <a href="{{route('services.single', $service)}}">
-                                                {{$service->getMedias('images')[0]}}
+                                                <img src="{{ Storage::url($service->images[0]) }}"/>
                                             </a>
 
                                         </figure>
