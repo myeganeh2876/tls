@@ -4,218 +4,52 @@
 
     <main>
         <div class="container">
-            <div class="">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="featuredProjectsBox pageProject">
-                            <figure class="featuredProjectsBox__img">
-                                <img src="./assets/image/Featured-Projects.jpg" alt="">
-                            </figure>
-                            <div class="featuredProjectsBox__content">
-                                <div class="featuredProjectsBox__title">
-                                    Project Name
-                                </div>
-                                <div class="featuredProjectsBox__location">
-                                    <i class="icon-map"></i>
-                                    <span>location</span>
-                                </div>
-                                <div class="featuredProjectsBox__text">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s, when an unknown printer
-                                </div>
+            <section class="serviceName">
+                <div class="serviceName__wrapper">
+                    {!! $service->content !!}
+                </div>
 
-                                <a href="# " class="featuredProjectsBox__more">
-                                    <i class="icon-arrow__right"></i>
-                                    <span>Read more</span>
-                                </a>
-                            </div>
-                        </div>
+
+                <div class="serviceName__wrFeature">
+                    <div class="serviceName__feature--title">
+                        Featured Projects
                     </div>
-                    <div class="col-md-6">
-                        <div class="featuredProjectsBox pageProject">
-                            <figure class="featuredProjectsBox__img">
-                                <img src="./assets/image/Featured-Projects.jpg" alt="">
-                            </figure>
-                            <div class="featuredProjectsBox__content">
-                                <div class="featuredProjectsBox__title">
-                                    Project Name
-                                </div>
-                                <div class="featuredProjectsBox__location">
-                                    <i class="icon-map"></i>
-                                    <span>location</span>
-                                </div>
-                                <div class="featuredProjectsBox__text">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s, when an unknown printer
-                                </div>
+                    <div class="row">
 
-                                <a href="# " class="featuredProjectsBox__more">
-                                    <i class="icon-arrow__right"></i>
-                                    <span>Read more</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="featuredProjectsBox pageProject">
-                            <figure class="featuredProjectsBox__img">
-                                <img src="./assets/image/Featured-Projects.jpg" alt="">
-                            </figure>
-                            <div class="featuredProjectsBox__content">
-                                <div class="featuredProjectsBox__title">
-                                    Project Name
-                                </div>
-                                <div class="featuredProjectsBox__location">
-                                    <i class="icon-map"></i>
-                                    <span>location</span>
-                                </div>
-                                <div class="featuredProjectsBox__text">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s, when an unknown printer
-                                </div>
+                        @foreach($service->projects as $project)
 
-                                <a href="# " class="featuredProjectsBox__more">
-                                    <i class="icon-arrow__right"></i>
-                                    <span>Read more</span>
-                                </a>
+                            <div class="col-md-6">
+                                <div class="serviceName__featureBox">
+                                    <figure class="serviceName__featureBox--img">
+                                        <a href="{{route('projects.single', $project)}}">
+                                            {{$project->getMedias('images')[0]}}
+                                        </a>
+                                    </figure>
+                                    <div class="serviceName__featureBox--content">
+                                        <div class="serviceName__featureBox--wr">
+                                            <div class="serviceName__featureBox--title">
+                                                {{$project->title}}
+                                            </div>
+                                            <div class="serviceName__featureBox--location">
+                                                <i class="icon-map"></i>
+                                                <span>{{$project->location}}</span>
+                                            </div>
+                                        </div>
+                                        <a href="{{route('projects.single', $project)}}" class="serviceName__featureBox--more">
+                                            <i class="icon-arrow__right"></i>
+                                            <span>Read more</span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="featuredProjectsBox pageProject">
-                            <figure class="featuredProjectsBox__img">
-                                <img src="./assets/image/Featured-Projects.jpg" alt="">
-                            </figure>
-                            <div class="featuredProjectsBox__content">
-                                <div class="featuredProjectsBox__title">
-                                    Project Name
-                                </div>
-                                <div class="featuredProjectsBox__location">
-                                    <i class="icon-map"></i>
-                                    <span>location</span>
-                                </div>
-                                <div class="featuredProjectsBox__text">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s, when an unknown printer
-                                </div>
+                        @endforeach
 
-                                <a href="# " class="featuredProjectsBox__more">
-                                    <i class="icon-arrow__right"></i>
-                                    <span>Read more</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="featuredProjectsBox pageProject">
-                            <figure class="featuredProjectsBox__img">
-                                <img src="./assets/image/Featured-Projects.jpg" alt="">
-                            </figure>
-                            <div class="featuredProjectsBox__content">
-                                <div class="featuredProjectsBox__title">
-                                    Project Name
-                                </div>
-                                <div class="featuredProjectsBox__location">
-                                    <i class="icon-map"></i>
-                                    <span>location</span>
-                                </div>
-                                <div class="featuredProjectsBox__text">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s, when an unknown printer
-                                </div>
 
-                                <a href="# " class="featuredProjectsBox__more">
-                                    <i class="icon-arrow__right"></i>
-                                    <span>Read more</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="featuredProjectsBox pageProject">
-                            <figure class="featuredProjectsBox__img">
-                                <img src="./assets/image/Featured-Projects.jpg" alt="">
-                            </figure>
-                            <div class="featuredProjectsBox__content">
-                                <div class="featuredProjectsBox__title">
-                                    Project Name
-                                </div>
-                                <div class="featuredProjectsBox__location">
-                                    <i class="icon-map"></i>
-                                    <span>location</span>
-                                </div>
-                                <div class="featuredProjectsBox__text">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s, when an unknown printer
-                                </div>
 
-                                <a href="# " class="featuredProjectsBox__more">
-                                    <i class="icon-arrow__right"></i>
-                                    <span>Read more</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="featuredProjectsBox pageProject">
-                            <figure class="featuredProjectsBox__img">
-                                <img src="./assets/image/Featured-Projects.jpg" alt="">
-                            </figure>
-                            <div class="featuredProjectsBox__content">
-                                <div class="featuredProjectsBox__title">
-                                    Project Name
-                                </div>
-                                <div class="featuredProjectsBox__location">
-                                    <i class="icon-map"></i>
-                                    <span>location</span>
-                                </div>
-                                <div class="featuredProjectsBox__text">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s, when an unknown printer
-                                </div>
 
-                                <a href="# " class="featuredProjectsBox__more">
-                                    <i class="icon-arrow__right"></i>
-                                    <span>Read more</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="featuredProjectsBox pageProject">
-                            <figure class="featuredProjectsBox__img">
-                                <img src="./assets/image/Featured-Projects.jpg" alt="">
-                            </figure>
-                            <div class="featuredProjectsBox__content">
-                                <div class="featuredProjectsBox__title">
-                                    Project Name
-                                </div>
-                                <div class="featuredProjectsBox__location">
-                                    <i class="icon-map"></i>
-                                    <span>location</span>
-                                </div>
-                                <div class="featuredProjectsBox__text">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                                    Lorem Ipsum has been the industry's standard dummy text ever since the
-                                    1500s, when an unknown printer
-                                </div>
-
-                                <a href="# " class="featuredProjectsBox__more">
-                                    <i class="icon-arrow__right"></i>
-                                    <span>Read more</span>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <br>
             <br>
             <br>
@@ -231,5 +65,6 @@
             <br>
             <br>
             <br>
+        </div>
     </main>
 @endsection

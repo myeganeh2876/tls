@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Service;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ServiceController extends Controller
 {
 
     public function __invoke()
     {
-        return view('pages.home');
+        return view('pages.services');
+    }
+
+    public function single(Request $request, Service $service)
+    {
+        return view('pages.single_service', compact('service'));
     }
 }

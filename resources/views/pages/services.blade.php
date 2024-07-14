@@ -23,174 +23,27 @@
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
-                            <div class="swiper-slide">
-                                <div class="services__box">
-                                    <figure class="services__box--img">
-                                        <a href="#">
-                                            <img src="./assets/image/serviceImg.jpg" alt="">
-                                        </a>
+                            @foreach($services as $service)
+                                <div class="swiper-slide">
+                                    <div class="services__box">
+                                        <figure class="services__box--img">
+                                            <a href="{{route('services.single', $service)}}">
+                                                {{$service->getMedias('images')[0]}}
+                                            </a>
 
-                                    </figure>
-                                    <div class="services__box--title">
-                                        Service name
+                                        </figure>
+                                        <div class="services__box--title">
+                                            {{$service->title}}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="services__box">
-                                    <figure class="services__box--img">
-                                        <a href="#">
-                                            <img src="./assets/image/serviceImg.jpg" alt="">
-                                        </a>
+                            @endforeach
 
-                                    </figure>
-                                    <div class="services__box--title">
-                                        Service name
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="services__box">
-                                    <figure class="services__box--img">
-                                        <a href="#">
-                                            <img src="./assets/image/serviceImg.jpg" alt="">
-                                        </a>
 
-                                    </figure>
-                                    <div class="services__box--title">
-                                        Service name
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="services__box">
-                                    <figure class="services__box--img">
-                                        <a href="#">
-                                            <img src="./assets/image/serviceImg.jpg" alt="">
-                                        </a>
-
-                                    </figure>
-                                    <div class="services__box--title">
-                                        Service name
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="services__box">
-                                    <figure class="services__box--img">
-                                        <a href="#">
-                                            <img src="./assets/image/serviceImg.jpg" alt="">
-                                        </a>
-
-                                    </figure>
-                                    <div class="services__box--title">
-                                        Service name
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="services__box">
-                                    <figure class="services__box--img">
-                                        <a href="#">
-                                            <img src="./assets/image/serviceImg.jpg" alt="">
-                                        </a>
-
-                                    </figure>
-                                    <div class="services__box--title">
-                                        Service name
-                                    </div>
-                                </div>
-                            </div>
 
                         </div>
                     </div>
                 </div>
-                <!-- <div class="row">
-                    <div class="col-sm-6 col-lg-4 col-xl-3">
-                        <div class="services__box">
-                            <figure class="services__box--img">
-                                <a href="#">
-                                    <img src="./assets/image/serviceImg.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="services__box--title">
-                                Service name
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 col-xl-3">
-                        <div class="services__box">
-                            <figure class="services__box--img">
-                                <a href="#">
-                                    <img src="./assets/image/serviceImg.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="services__box--title">
-                                Service name
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 col-xl-3">
-                        <div class="services__box">
-                            <figure class="services__box--img">
-                                <a href="#">
-                                    <img src="./assets/image/serviceImg.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="services__box--title">
-                                Service name
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 col-xl-3">
-                        <div class="services__box">
-                            <figure class="services__box--img">
-                                <a href="#">
-                                    <img src="./assets/image/serviceImg.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="services__box--title">
-                                Service name
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 col-xl-3">
-                        <div class="services__box">
-                            <figure class="services__box--img">
-                                <a href="#">
-                                    <img src="./assets/image/serviceImg.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="services__box--title">
-                                Service name
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 col-xl-3">
-                        <div class="services__box">
-                            <figure class="services__box--img">
-                                <a href="#">
-                                    <img src="./assets/image/serviceImg.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="services__box--title">
-                                Service name
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-4 col-xl-3">
-                        <div class="services__box">
-                            <figure class="services__box--img">
-                                <a href="#">
-                                    <img src="./assets/image/serviceImg.jpg" alt="">
-                                </a>
-                            </figure>
-                            <div class="services__box--title">
-                                Service name
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </section>
         </div>
         <br>

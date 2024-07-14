@@ -1,26 +1,20 @@
 @extends('index')
 
 @section('content')
+
     <main>
         <div class="container">
-            <div class="row">
-                <section class="notFound notFoundErorr">
-                    <figure igure class="notFound__img">
-                        <img src="./assets/image/iconNotFound.svg" alt="">
-                    </figure>
-                    <div class="notFound__title">
-                        خطای ۴۰۴
+            <section class="pages">
+                <div class="pages__wrapper">
+                    <div class="pages__title">
+                        404
                     </div>
-                    <span class="notFound__text">
-                        این صفحه در حال حاضر وجود نداره
-                    </span>
-                    <div class="notFound__wrBtn">
-                        <a href="#" class="notFound__backToHome">
-                            بازگشت به صفحه اصلی
-                        </a>
+                    <div class="pages__text">
+                        Not Found!
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
         </div>
     </main>
+
 @endsection

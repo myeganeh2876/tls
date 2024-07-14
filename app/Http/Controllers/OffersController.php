@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Package;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class OffersController extends Controller
 {
 
     public function __invoke()
     {
-        return view('pages.home');
+        $packages = Package::query()->get();
+        return view('pages.package', compact('packages'));
     }
 }

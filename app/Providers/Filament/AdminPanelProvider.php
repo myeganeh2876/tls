@@ -2,18 +2,13 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Pages\GympallActivities;
-use BezhanSalleh\FilamentExceptions\FilamentExceptionsPlugin;
-use Filament\FontProviders\SpatieGoogleFontProvider;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
-use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Widgets;
-use Firefly\FilamentBlog\Blog;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -22,8 +17,6 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Joaopaulolndev\FilamentGeneralSettings\FilamentGeneralSettingsPlugin;
-use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
-use Swis\Filament\Backgrounds\ImageProviders\MyImages;
 use Tobiasla78\FilamentSimplePages\FilamentSimplePagesPlugin;
 
 class AdminPanelProvider extends PanelProvider
@@ -35,17 +28,16 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('kcp')
             ->login()
-            ->brandName('جیم پل')
-            ->brandLogo(asset('images/logo.svg'))
-            ->favicon(asset('images/favicon.ico'))
+            ->brandName('TLS')
+            ->brandLogo(asset('assets/image/Union.svg'))
+            ->favicon(asset('assets/image/Union.svg'))
             ->colors([
-                'primary' => Color::hex('#FE8C36'),
+                'primary' => Color::hex('#d7ad64'),
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
-//                Pages\Dashboard::class,
-                GympallActivities::class
+//                Pages\Dashboard::class
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
@@ -54,22 +46,13 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 FilamentGeneralSettingsPlugin::make()
-                    ->setTitle('تنظیمات')
-                    ->setNavigationLabel('تنظیمات')
-                    ->setNavigationGroup('سیستم')
+                    ->setTitle('Settings')
+                    ->setNavigationLabel('Settings')
                     ->setIcon('iconoir-settings'),
                 FilamentSimplePagesPlugin::make()
-                    ->setIcon('iconoir-page-edit')
-                    ->setSort(20)
-                    ->setNavigationLabel('صفحات')
                     ->prefixSlug('page'),
-                FilamentBackgroundsPlugin::make()
-                    ->showAttribution(false)
-                    ->remember(0)
-                    ->imageProvider(
-                        MyImages::make()
-                            ->directory('images/wallpapers')
-                    )
+                \TomatoPHP\FilamentMenus\FilamentMenusPlugin::make()
+
             ])
             ->middleware([
                 EncryptCookies::class,
@@ -84,7 +67,6 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ])
-            ->font('vazir', provider: SpatieGoogleFontProvider::class);
+            ]);
     }
 }
