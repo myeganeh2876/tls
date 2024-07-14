@@ -37,7 +37,9 @@
                                     <div class="services__box">
                                         <figure class="services__box--img">
                                             <a href="{{route('services.single', $service)}}">
-                                                {{$service->getMedias('images')[0]}}
+                                                    <div>
+                                                        {{ $service->getMedias('images')[0]->withImageProperties( width : 200,height: 200)->withView('components.json-media') }}
+                                                    </div>
                                             </a>
 
                                         </figure>
